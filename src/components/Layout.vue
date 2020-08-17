@@ -35,8 +35,8 @@
           </a-menu-item>
         </a-menu>
       </a-layout-sider>
-      <a-layout style="padding: 0 24px 24px">
-        <a-breadcrumb style="margin: 16px 0">
+      <a-layout>
+        <a-breadcrumb style="padding: 16px 18px;">
           <a-breadcrumb-item>Home</a-breadcrumb-item>
           <a-breadcrumb-item>List</a-breadcrumb-item>
           <a-breadcrumb-item>App</a-breadcrumb-item>
@@ -46,7 +46,7 @@
             background: '#fff',
             padding: '24px',
             margin: 0,
-            minHeight: '280px'
+            minHeight: '280px',
           }"
         >
           <router-view></router-view>
@@ -59,9 +59,9 @@
 export default {
   data() {
     return {
-      collapsed: false
+      collapsed: false,
     };
-  }
+  },
 };
 </script>
 
@@ -74,5 +74,7 @@ export default {
   float: left;
   color: #fff;
   line-height: 32px;
+}
+.header {
 }
 </style>
