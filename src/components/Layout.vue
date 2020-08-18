@@ -7,14 +7,17 @@
       <a-layout-sider
         width="200"
         style="background: #fff"
+        :trigger="null"
         collapsible
         v-model="collapsed"
       >
         <a-menu
+          theme="dark"
           mode="inline"
           :defaultSelectedKeys="['1']"
           :style="{ height: '100%', borderRight: 0 }"
         >
+          
           <a-menu-item key="1">
             <router-link :to="{ name: 'Home' }">
               <a-icon type="user" />

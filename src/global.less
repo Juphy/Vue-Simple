@@ -1,0 +1,30 @@
+@import "~ant-design-vue/es/style/themes/default.less";
+
+@L: left;
+@R: right;
+@T: top;
+@B: bottom;
+@C: center;
+@orientations: @L, @R, @C;
+each(@orientations, {
+    .text-@{value}{
+        text-align: @value;
+    }
+})
+@lengths: rang(48px);
+
+@directions: @L, @R, @T, @B;
+each(@lengths, {
+    .font-size-@{value}{
+        font-size: @value
+    }
+    @v: @value;
+    each(@directions, {
+        .margin-@{v}-@{value}{
+            margin-@{v}: @value;
+        }
+        .padding-@{v}-@{value}{
+            padding-@{v}: @value;
+        }
+    })
+})

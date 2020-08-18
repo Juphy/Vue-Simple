@@ -1,3 +1,7 @@
+// with polyfills
+import 'core-js/stable'
+import 'regenerator-runtime/runtime'
+
 import Vue from 'vue'
 import App from './App.vue'
 import {
@@ -7,20 +11,12 @@ import {
   Icon,
   Breadcrumb
 } from 'ant-design-vue';
-import 'ant-design-vue/dist/antd.css';
-import "./assets/style.css";
+import "./global.less";
 import router from './router'
 
-Vue.component(Button.name, Button);
-Vue.component(Layout.name, Layout);
-Vue.component(Layout.Header.name, Layout.Header);
-Vue.component(Layout.Sider.name, Layout.Sider);
-Vue.component(Layout.Content.name, Layout.Content);
-Vue.component(Menu.name, Menu);
-Vue.component(Menu.Item.name, Menu.Item);
-Vue.component(Icon.name, Icon);
-Vue.component(Breadcrumb.name, Breadcrumb);
-Vue.component(Breadcrumb.Item.name, Breadcrumb.Item);
+for (let key of [Button, Layout, Menu, Icon, Breadcrumb]) {
+  Vue.use(key)
+}
 
 Vue.config.productionTip = false;
 

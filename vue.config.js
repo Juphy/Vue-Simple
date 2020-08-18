@@ -33,6 +33,18 @@ module.exports = {
 
     css: {
         sourceMap: false,
-        loaderOptions: {} // 为所有的css以预处理文件开启CSS Modules
+        // 为所有的css以预处理文件开启CSS Modules
+        loaderOptions: {
+            less: {
+                lessOptions: {
+                    modifyVars: {
+                        'primary-color': '#1DA57A',
+                        'link-color': '#1DA57A',
+                        'border-radius-base': '2px',
+                    },
+                    javascriptEnabled: true
+                }
+            }
+        }
     }
 }
